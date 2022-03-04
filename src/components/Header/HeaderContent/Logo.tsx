@@ -26,15 +26,16 @@ const Open = ({ onClick }) => {
   const { open } = useStyles()
 
   return (
-    <Box sx={{ background: "#999" }} className={open}>
-      <TooltipWithOnClick
-        title={getFullname(useUser()[0], useTranslation("vocabulary").t)}
-      >
-        <IconButton onClick={onClick}>
-          <Avatar />
-        </IconButton>
-      </TooltipWithOnClick>
-    </Box>
+    <TooltipWithOnClick
+      title={getFullname(useUser()[0], useTranslation("vocabulary").t)}
+      tooltipProps={{
+        className: open,
+      }}
+    >
+      <IconButton onClick={onClick}>
+        <Avatar src={useUser()[0].photoURL} />
+      </IconButton>
+    </TooltipWithOnClick>
   )
 }
 
