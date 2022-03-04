@@ -1,4 +1,4 @@
-import dependsOnToolbar from "../../../utils/dependsOnToolbar"
+import {dependsOnToolbar} from "@the-chat/utils"
 import {Typography, Breadcrumbs, Theme} from "@mui/material"
 import makeStyles from "@mui/styles/makeStyles"
 import {useUser} from "../../../utils/contexts"

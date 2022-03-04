@@ -13,6 +13,7 @@
     "@the-chat/gen-context": "^1.0.8",
     "@the-chat/types": "^1.0.5",
     "@the-chat/use-user": "^1.0.7",
+    "@the-chat/utils": "^1.0.0",
     "next": "^12.0.10",
     "next-i18next": "^10.5.0",
     "react": "^17.0.2",

@@ -10,7 +10,7 @@ import {
   signUp,
 } from "../config/buttons"
 import {useUser} from "./contexts"
-import {sort} from "./sort"
+import {sort} from "@the-chat/utils"
 
 const useSidebarButtons = (): SidebarButtonConfig[] => {
   const [, user] = useUser()

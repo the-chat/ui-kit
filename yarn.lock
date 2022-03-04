@@ -808,6 +808,11 @@
     react "^17.0.2"
     react-firebase-hooks "4.0.1"
 
+"@the-chat/utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@the-chat/utils/-/utils-1.0.0.tgz#0ab79c76b438cf23a2e5f583c35028b54ecd2f39"
+  integrity sha512-amD+f7FlbsrphZaGOQSbezaDpa2LXaGLYMZhKepZUk7XQSq6+gcC/46d3KZ3ZvrvnKD5bmLZ/BLYBs6/qKzIHw==
+
 "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
