@@ -6,10 +6,11 @@ import {
   ListItemIcon,
   Menu,
   MenuItem,
+  ListItemButton,
   Theme,
+  ListItemText,
 } from "@mui/material"
 import { makeStyles } from "@mui/styles"
-import { Box } from "@mui/system"
 import { useTranslation } from "next-i18next"
 import React from "react"
 import { useUser } from "../../../utils/contexts"
@@ -30,6 +31,13 @@ const Open = ({ onClick }) => {
       title={getFullname(useUser()[0], useTranslation("vocabulary").t)}
       tooltipProps={{
         className: open,
+      }}
+      componentProps={{
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "centet",
+        },
       }}
     >
       <IconButton onClick={onClick}>
@@ -84,9 +92,16 @@ const MenuItems = () => {
   return (
     // todo: translate
     <>
-      <MenuItem href="the-chat-sso.vercel.app/edit" LinkComponent={Link}>
-        <Avatar src={useUser()[0].photoURL} /> Edit my account
-      </MenuItem>
+      <ListItemButton href="the-chat-sso.vercel.app/edit" LinkComponent={Link}>
+        <ListItemIcon>
+          <Avatar src={useUser()[0].photoURL} />
+        </ListItemIcon>
+        <ListItemText>Edit my account</ListItemText>
+      </ListItemButton>
+      {/* <MenuItem href="the-chat-sso.vercel.app/edit" LinkComponent={Link}>
+        <Avatar src={useUser()[0].photoURL} />
+        Edit my account
+      </MenuItem> */}
       <Divider />
       <MenuItem onClick={() => console.log("SIGN OUT (TODO)")}>
         <ListItemIcon>
