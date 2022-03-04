@@ -1,9 +1,6 @@
-import genContext, {
-  genStateContext,
-  SimpleProviderWrapper,
-} from "@the-chat/gen-context"
-import {BaseUserData, State} from "@the-chat/types"
-import getUser, {AllUserData} from "@the-chat/use-user"
+import genContext, { SimpleProviderWrapper } from "@the-chat/gen-context"
+import { BaseUserData, State } from "@the-chat/types"
+import { AllUserData } from "@the-chat/use-user"
 
 const [useConfig, ConfigProvider] = genContext<{
   sidebarOpen: State<boolean>
@@ -16,4 +13,4 @@ const [useConfig, ConfigProvider] = genContext<{
 
 export const useSidebarOpen = () => useConfig().sidebarOpen
 export const useUser = () => useConfig().user
-export {ConfigProvider}
+export { ConfigProvider }

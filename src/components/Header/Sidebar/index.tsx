@@ -1,6 +1,6 @@
 import Buttons from "./Buttons"
-import {Drawer} from "@mui/material"
-import {useSidebarOpen} from "../../../utils/contexts"
+import { Drawer } from "@mui/material"
+import { useSidebarOpen } from "../../../utils/contexts"
 import HeaderContent from "../HeaderContent"
 import React from "react"
 

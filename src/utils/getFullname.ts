@@ -1,8 +1,8 @@
-import {TFunction} from "next-i18next"
-import {BaseUserData} from "@the-chat/types"
+import { TFunction } from "next-i18next"
+import { BaseUserData } from "@the-chat/types"
 
 const getFullname = (
-  {displayName, email, phoneNumber}: BaseUserData,
+  { displayName, email, phoneNumber }: BaseUserData,
   voc: TFunction
 ) => {
   const emailStr = email ? ` <${email}>` : ""

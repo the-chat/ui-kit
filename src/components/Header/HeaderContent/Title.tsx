@@ -1,9 +1,9 @@
-import {dependsOnToolbar} from "@the-chat/utils"
-import {Typography, Breadcrumbs, Theme} from "@mui/material"
+import { dependsOnToolbar } from "@the-chat/utils"
+import { Typography, Breadcrumbs, Theme } from "@mui/material"
 import makeStyles from "@mui/styles/makeStyles"
-import {useUser} from "../../../utils/contexts"
+import { useUser } from "../../../utils/contexts"
 import getFullname from "../../../utils/getFullname"
-import {useTranslation} from "next-i18next"
+import { useTranslation } from "next-i18next"
 import TooltipWithOnClick from "../../TooltipWithOnClick"
 import React from "react"
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
       transform: "translate(" + toolbarHeight + "px)",
     })),
   },
-  separator: {margin: theme.spacing(0, 1)},
+  separator: { margin: theme.spacing(0, 1) },
 }))
 
 const Title = () => {

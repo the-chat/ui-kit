@@ -9,8 +9,8 @@ import {
   signOut,
   signUp,
 } from "../config/buttons"
-import {useUser} from "./contexts"
-import {sort} from "@the-chat/utils"
+import { useUser } from "./contexts"
+import { sort } from "@the-chat/utils"
 
 const useSidebarButtons = (): SidebarButtonConfig[] => {
   const [, user] = useUser()
@@ -41,10 +41,10 @@ const useSidebarButtons = (): SidebarButtonConfig[] => {
           about,
           legalInfo,
         },
-        user && {chat, settings, signOut}
+        user && { chat, settings, signOut }
       )
     ),
-    ({index}) => index
+    ({ index }) => index
   )
 }
 

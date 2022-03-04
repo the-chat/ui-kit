@@ -1,9 +1,9 @@
-import {ListItemText, ListItemIcon, ListItemButton} from "@mui/material"
+import { ListItemText, ListItemIcon, ListItemButton } from "@mui/material"
 import Link from "../../Link"
 import TooltipWithOnClick from "../../TooltipWithOnClick"
-import {useTranslation} from "next-i18next"
-import {SvgIconComponent} from "@mui/icons-material"
-import {useSidebarOpen} from "../../../utils/contexts"
+import { useTranslation } from "next-i18next"
+import { SvgIconComponent } from "@mui/icons-material"
+import { useSidebarOpen } from "../../../utils/contexts"
 import React from "react"
 
 interface ButtonProps {
@@ -13,8 +13,8 @@ interface ButtonProps {
   href: string
 }
 
-const Button = ({currentHref, divider, Icon, href}: ButtonProps) => {
-  const {t} = useTranslation("pages")
+const Button = ({ currentHref, divider, Icon, href }: ButtonProps) => {
+  const { t } = useTranslation("pages")
   const [, setOpen] = useSidebarOpen()
 
   return (
@@ -25,7 +25,7 @@ const Button = ({currentHref, divider, Icon, href}: ButtonProps) => {
         color="textPrimary"
         component={Link}
         {...(!currentHref
-          ? {onClick: () => setOpen(false)}
+          ? { onClick: () => setOpen(false) }
           : {
               sx: {
                 pointerEvents: "none",
@@ -34,10 +34,10 @@ const Button = ({currentHref, divider, Icon, href}: ButtonProps) => {
         href={href}
         divider={divider}
       >
-        <ListItemIcon sx={{color: "primary.main", minWidth: "initial"}}>
+        <ListItemIcon sx={{ color: "primary.main", minWidth: "initial" }}>
           <Icon />
         </ListItemIcon>
-        <ListItemText sx={{p: 1, m: 0}} primary={t(href)} />
+        <ListItemText sx={{ p: 1, m: 0 }} primary={t(href)} />
       </ListItemButton>
     </TooltipWithOnClick>
   )

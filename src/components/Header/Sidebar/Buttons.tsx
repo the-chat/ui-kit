@@ -1,8 +1,8 @@
 import Button from "./Button"
-import {List} from "@mui/material"
+import { List } from "@mui/material"
 import makeStyles from "@mui/styles/makeStyles"
-import {dependsOnToolbar} from "@the-chat/utils"
-import {useRouter} from "next/router"
+import { dependsOnToolbar } from "@the-chat/utils"
+import { useRouter } from "next/router"
 import useSidebarButtons from "../../../utils/useSidebarButtons"
 import React from "react"
 
@@ -18,17 +18,17 @@ const useStyles = makeStyles({
 })
 
 const Buttons = () => {
-  const {buttonsClassName} = useStyles()
+  const { buttonsClassName } = useStyles()
   const buttons = useSidebarButtons()
   const router = useRouter()
 
   return (
     <List className={buttonsClassName}>
-      {buttons.map(({divider, href, Icon}) => (
+      {buttons.map(({ divider, href, Icon }) => (
         <Button
           key={href}
           currentHref={router.pathname === href}
-          {...{divider, href, Icon}}
+          {...{ divider, href, Icon }}
         />
       ))}
     </List>

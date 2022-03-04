@@ -21,7 +21,7 @@ export interface SidebarButtonConfig {
 let i = 0
 const genButtonConfig = (
   data: Omit<SidebarButtonConfig, "index">
-): SidebarButtonConfig => ({index: i++, ...data})
+): SidebarButtonConfig => ({ index: i++, ...data })
 
 // todo?: vars to obj
 export const chat = genButtonConfig({
@@ -48,5 +48,5 @@ export const signOut = genButtonConfig({
   Icon: MeetingRoom,
   href: "/sign/out",
 })
-export const about = genButtonConfig({Icon: Help, href: "/about"})
-export const legalInfo = genButtonConfig({Icon: Info, href: "/legal"})
+export const about = genButtonConfig({ Icon: Help, href: "/about" })
+export const legalInfo = genButtonConfig({ Icon: Info, href: "/legal" })

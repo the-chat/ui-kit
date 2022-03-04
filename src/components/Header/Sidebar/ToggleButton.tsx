@@ -1,8 +1,8 @@
-import {makeStyles} from "@mui/styles"
-import {IconButton, Theme} from "@mui/material"
-import {dependsOnToolbar} from "@the-chat/utils"
-import {useSidebarOpen} from "../../../utils/contexts"
-import {Close, Menu} from "@mui/icons-material"
+import { makeStyles } from "@mui/styles"
+import { IconButton, Theme } from "@mui/material"
+import { dependsOnToolbar } from "@the-chat/utils"
+import { useSidebarOpen } from "../../../utils/contexts"
+import { Close, Menu } from "@mui/icons-material"
 import React from "react"
 
 const useStyles = makeStyles<Theme>((theme) => ({
@@ -32,7 +32,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
 
 const ToggleButton = () => {
   const [open, setOpen] = useSidebarOpen()
-  const {button} = useStyles()
+  const { button } = useStyles()
 
   return (
     <IconButton className={button} onClick={() => setOpen((p) => !p)}>
