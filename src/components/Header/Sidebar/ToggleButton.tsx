@@ -4,6 +4,7 @@ import { dependsOnToolbar } from "@the-chat/utils"
 import { useSidebarOpen } from "../../../utils/contexts"
 import { Close, Menu } from "@mui/icons-material"
 import React from "react"
+import headerButtonStyles from "../../../utils/headerButtonStyles"
 
 const useStyles = makeStyles<Theme>((theme) => ({
   button: {
@@ -13,20 +14,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
       background: theme.palette.primary.main,
       color: theme.palette.background.default,
     },
-    position: "absolute",
-    ...dependsOnToolbar((toolbarHeight) => {
-      // learn: what is "margin" here
-      // todo?: same as in index
-      const margin = parseInt(theme.spacing(1))
-      const radius = toolbarHeight / 2 - margin
-
-      return {
-        top: margin,
-        left: margin,
-        width: radius * 2,
-        height: radius * 2,
-      }
-    }),
+    ...headerButtonStyles,
   },
 }))
 
