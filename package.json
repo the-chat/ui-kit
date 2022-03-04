@@ -1,9 +1,15 @@
 {
   "name": "@the-chat/ui-kit",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "git://github.com/the-chat/ui-kit",
+  "scripts": {
+    "prepublish": "rm -rf dist&&tsc"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
