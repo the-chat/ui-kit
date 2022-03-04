@@ -14,7 +14,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
       background: theme.palette.primary.main,
       color: theme.palette.background.default,
     },
-    ...headerButtonStyles,
+    ...headerButtonStyles(theme),
   },
 }))
 

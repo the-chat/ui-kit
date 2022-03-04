@@ -6,6 +6,7 @@ import {
   ListItemIcon,
   Menu,
   MenuItem,
+  Theme,
   Tooltip,
 } from "@mui/material"
 import { makeStyles } from "@mui/styles"
@@ -17,7 +18,9 @@ import getFullname from "../../../utils/getFullname"
 import headerButtonStyles from "../../../utils/headerButtonStyles"
 import Link from "../../Link"
 
-const useStyles = makeStyles({ open: headerButtonStyles })
+const useStyles = makeStyles<Theme>((theme) => ({
+  open: headerButtonStyles(theme),
+}))
 
 const Open = ({ onClick }) => {
   const { open } = useStyles()
