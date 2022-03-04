@@ -19,7 +19,7 @@ import headerButtonStyles from "../../../utils/headerButtonStyles"
 import Link from "../../Link"
 
 const useStyles = makeStyles<Theme>((theme) => ({
-  open: headerButtonStyles(theme),
+  open: headerButtonStyles(theme, true),
 }))
 
 const Open = ({ onClick }) => {

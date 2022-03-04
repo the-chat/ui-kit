@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material"
 import { dependsOnToolbar } from "@the-chat/utils"
 
-const headerButtonStyles = (theme: Theme) => ({
+const headerButtonStyles = (theme: Theme, right?: true) => ({
   position: "absolute" as const,
   ...dependsOnToolbar((toolbarHeight) => {
     // learn: what is "margin" here
@@ -11,7 +11,7 @@ const headerButtonStyles = (theme: Theme) => ({
 
     return {
       top: margin,
-      left: margin,
+      [right ? "right" : "left"]: margin,
       width: radius * 2,
       height: radius * 2,
     }
