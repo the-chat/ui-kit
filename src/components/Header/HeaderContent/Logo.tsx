@@ -7,7 +7,6 @@ import {
   Menu,
   MenuItem,
   Theme,
-  Tooltip,
 } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import { Box } from "@mui/system"
@@ -17,6 +16,7 @@ import { useUser } from "../../../utils/contexts"
 import getFullname from "../../../utils/getFullname"
 import headerButtonStyles from "../../../utils/headerButtonStyles"
 import Link from "../../Link"
+import TooltipWithOnClick from "../../TooltipWithOnClick"
 
 const useStyles = makeStyles<Theme>((theme) => ({
   open: headerButtonStyles(theme, true),
@@ -26,14 +26,14 @@ const Open = ({ onClick }) => {
   const { open } = useStyles()
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-      <Tooltip
+    <Box sx={{ background: "#999" }} className={open}>
+      <TooltipWithOnClick
         title={getFullname(useUser()[0], useTranslation("vocabulary").t)}
       >
         <IconButton onClick={onClick}>
-          <Avatar className={open} />
+          <Avatar />
         </IconButton>
-      </Tooltip>
+      </TooltipWithOnClick>
     </Box>
   )
 }
