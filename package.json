@@ -16,7 +16,7 @@
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.1",
     "@mui/styles": "^5.4.1",
-    "@the-chat/gen-context": "^1.1.1",
+    "@the-chat/gen-context": "^1.1.2",
     "@the-chat/types": "^1.0.6",
     "@the-chat/use-user": "^1.0.8",
     "@the-chat/utils": "^1.0.2",
