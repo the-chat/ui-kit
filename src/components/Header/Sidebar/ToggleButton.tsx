@@ -1,6 +1,5 @@
 import { makeStyles } from "@mui/styles"
 import { IconButton, Theme } from "@mui/material"
-import { dependsOnToolbar } from "@the-chat/utils"
 import { useSidebarOpen } from "../../../utils/contexts"
 import { Close, Menu } from "@mui/icons-material"
 import React from "react"
