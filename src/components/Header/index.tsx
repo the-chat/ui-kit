@@ -7,10 +7,12 @@ import Account from "./Account"
 // TOOD: NAMING IN ALL DiR
 // TODO: FOLDER STRUCTURE, IMPORTS
 
-export const Header = () => (
+const Header = () => (
   <AppBar position="sticky">
     <HeaderContent />
     <Sidebar />
     <Account />
   </AppBar>
 )
+
+export default Header
