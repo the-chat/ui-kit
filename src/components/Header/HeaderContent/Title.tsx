@@ -1,7 +1,7 @@
 import { dependsOnToolbar } from "@the-chat/utils"
 import { Typography, Breadcrumbs, Theme } from "@mui/material"
 import makeStyles from "@mui/styles/makeStyles"
-import { useUser } from "../../../utils/contexts"
+import { useUser } from "@the-chat/use-user"
 import getFullname from "../../../utils/getFullname"
 import { useTranslation } from "next-i18next"
 import TooltipWithOnClick from "../../TooltipWithOnClick"
