@@ -2,10 +2,9 @@ import genContext from "@the-chat/gen-context"
 import { State } from "@the-chat/types"
 import usePkgSSO, { getSSOLink } from "@the-chat/use-sso"
 import { useSignOut } from "@the-chat/use-user"
-import { SSO } from "@the-chat/config"
+import { SSO, INFO } from "@the-chat/config"
 import { SidebarButtonConfig } from "./useSidebarButtons"
 import { Auth } from "@firebase/auth"
-import { INFO } from "@the-chat/config"
 // todo: old-comment: use-user: type default value
 
 // todo???????: to types pkg???
