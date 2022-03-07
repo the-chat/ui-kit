@@ -9,12 +9,12 @@ export interface SidebarButtonConfig {
   href: string
 }
 
-export const useSidebarDefaultButtons = () => {
+export const useSidebarDefaultButtons = (indexOffset: number) => {
   const { HOST, aboutUrl, legalUrl } = useInfoConfig()
 
   return [
-    { index: 0, Icon: Help, href: HOST + aboutUrl },
-    { index: 1, Icon: Info, href: HOST + legalUrl },
+    { index: indexOffset, Icon: Help, href: HOST + aboutUrl },
+    { index: indexOffset + 1, Icon: Info, href: HOST + legalUrl },
   ]
 }
 
@@ -22,6 +22,11 @@ export const useSidebarButtonsDefaultSortFn = (
   buttons: Record<string, SidebarButtonConfig>
 ): SidebarButtonConfig[] =>
   sort(
-    Object.values(Object.assign(buttons, useSidebarDefaultButtons())),
+    Object.values(
+      Object.assign(
+        buttons,
+        useSidebarDefaultButtons(Object.keys(buttons).length)
+      )
+    ),
     ({ index }) => index
   )
