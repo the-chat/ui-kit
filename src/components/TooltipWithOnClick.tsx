@@ -1,22 +1,22 @@
+import React, {
+  useState,
+  MouseEvent,
+  ReactNode,
+  ComponentProps,
+  ElementType,
+} from "react"
 import { ClickAwayListener, Tooltip, TooltipProps } from "@mui/material"
-import React, { useState, ReactNode, ComponentProps, ElementType } from "react"
-
-// learn: why this not works
-// <TooltipWithOnClick
-//   Component={(props) => (
-//     <Typography
-//       {...props}
-//       className={authorClassName}
-//       variant="body2"
-//       color="textSecondary"
-//     />
-//   )}
-//   title={authorLabel}
-// >
-//   {authorLabel}
-// </TooltipWithOnClick>
 
 // todo: too many eventHandlers calls
+
+type TooltipWithOnClickProps<T extends ElementType> = {
+  title: string
+  // todo: types
+  ComponentTag?: T | string
+  componentProps?: ComponentProps<T>
+  tooltipProps?: Partial<TooltipProps>
+  children: ReactNode
+}
 
 // todo: remake
 const TooltipWithOnClick = <T extends ElementType>({
@@ -25,14 +25,7 @@ const TooltipWithOnClick = <T extends ElementType>({
   componentProps,
   tooltipProps,
   children,
-}: {
-  title: string
-  // todo: types
-  ComponentTag?: T | string
-  componentProps?: ComponentProps<T>
-  tooltipProps?: Partial<TooltipProps>
-  children: ReactNode
-}) => {
+}: TooltipWithOnClickProps<T>) => {
   const [open, setOpen] = useState(false)
 
   const handleTooltipClose = () => setOpen(false)
@@ -56,7 +49,19 @@ const TooltipWithOnClick = <T extends ElementType>({
         onClick={(ev) => console.log(ev.target)}
         {...tooltipProps}
       >
-        <ComponentTag {...componentProps} onClick={handleTooltipOpen}>
+        <ComponentTag
+          {...componentProps}
+          onClick={(
+            ev: typeof componentProps extends undefined
+              ? undefined
+              : MouseEvent<T, MouseEvent>
+          ) => {
+            componentProps &&
+              componentProps.onClick &&
+              componentProps.onClick(ev)
+            handleTooltipOpen()
+          }}
+        >
           {children}
         </ComponentTag>
       </Tooltip>
