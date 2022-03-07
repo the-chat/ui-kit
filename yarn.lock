@@ -914,10 +914,10 @@
     react "^17.0.2"
     react-firebase-hooks "4.0.1"
 
-"@the-chat/utils@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@the-chat/utils/-/utils-1.1.1.tgz#51463262395648d3e451f6260b9ae8f92c95c925"
-  integrity sha512-cCHMAYVoqlbX0w8S2jw95/poBfTYleqrxIIq55S7qHzL9KAKj/5LFh8WscqygQI1/4Z2nnQJKQy+lneBwchd7Q==
+"@the-chat/utils@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@the-chat/utils/-/utils-1.1.2.tgz#bafe3a1c1f3192684c53fe6082413474a656364e"
+  integrity sha512-D1eR23DrRI9hSu38QyiR6wWbjftX2adio7NyALbvPba5y/rSpPtejeEbaQBxpKqNwSSsUW016nlBEYbLsUxchw==
   dependencies:
     "@the-chat/config" "^1.0.3"
     "@the-chat/types" "^1.0.6"
