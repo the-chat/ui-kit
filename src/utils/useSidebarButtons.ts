@@ -1,51 +1,27 @@
-import {
-  about,
-  chat,
-  // groups,
-  legalInfo,
-  settings,
-  SidebarButtonConfig,
-  signIn,
-  signOut,
-  signUp,
-} from "../config/buttons"
-import { useUser } from "./contexts"
 import { sort } from "@the-chat/utils"
+import { Info, Help, SvgIconComponent } from "@mui/icons-material"
+import { useInfoConfig } from "./contexts"
 
-const useSidebarButtons = (): SidebarButtonConfig[] => {
-  const [, user] = useUser()
-
-  // if without account
-  // groups
-  // sign in
-  // sign up
-  // about
-  // legal info
-
-  // if account
-  // chat
-  // groups
-  // settings
-  // sign in
-  // sign up
-  // sign out
-  // about
-  // legal info
-
-  return sort(
-    Object.values(
-      Object.assign(
-        {
-          signIn,
-          signUp,
-          about,
-          legalInfo,
-        },
-        user && { chat, settings, signOut }
-      )
-    ),
-    ({ index }) => index
-  )
+export interface SidebarButtonConfig {
+  divider?: boolean
+  index: number
+  Icon: SvgIconComponent
+  href: string
 }
 
-export default useSidebarButtons
+export const useSidebarDefaultButtons = () => {
+  const { HOST, aboutUrl, legalUrl } = useInfoConfig()
+
+  return [
+    { index: 0, Icon: Help, href: HOST + aboutUrl },
+    { index: 1, Icon: Info, href: HOST + legalUrl },
+  ]
+}
+
+export const useSidebarButtonsDefaultSortFn = (
+  buttons: Record<string, SidebarButtonConfig>
+): SidebarButtonConfig[] =>
+  sort(
+    Object.values(Object.assign(buttons, useSidebarDefaultButtons())),
+    ({ index }) => index
+  )
