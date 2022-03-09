@@ -4,6 +4,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "git://github.com/the-chat/ui-kit",
+  "type": "module",
   "scripts": {
     "prepublish": "rm -rf dist&&tsc"
   },
