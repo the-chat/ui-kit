@@ -1,10 +1,20 @@
 import React from "react"
 import { Namespace, useTranslation } from "react-i18next"
-import Markdown from "./Markdown"
+import getMarkdown, { Args, Options } from "./Markdown"
 
-const DisplayInfo = ({ tKey }: { tKey: Namespace }) => {
-  const { t } = useTranslation("info")
-  return <Markdown>{t(tKey)}</Markdown>
+const getDisplayInfo: (
+  ...args: Args
+) => (props: Options & { tKey: Namespace }) => JSX.Element = (
+  ReactMarkdown,
+  remarkGfm
+) => {
+  const Markdown = getMarkdown(ReactMarkdown, remarkGfm)
+
+  return ({ tKey, ...props }) => {
+    const { t } = useTranslation("info")
+
+    return <Markdown {...props}>{t(tKey)}</Markdown>
+  }
 }
 
-export default DisplayInfo
+export default getDisplayInfo
