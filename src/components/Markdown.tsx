@@ -21,7 +21,8 @@ export type Options = {
 }
 
 const getMarkdown = (
-  ReactMarkdown: (props: Options) => JSX.Element,
+  // todo?: types
+  ReactMarkdown: (props: unknown) => JSX.Element,
   remarkGfm: unknown
 ) => {
   const MarkdownHeading: H = ({ level, children }) => {
