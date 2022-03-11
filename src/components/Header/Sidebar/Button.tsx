@@ -3,7 +3,7 @@ import Link from "../../Link"
 import TooltipWithOnClick from "../../TooltipWithOnClick"
 import { useTranslation } from "next-i18next"
 import { SvgIconComponent } from "@mui/icons-material"
-import { useSidebarOpen } from "../../../utils/contexts"
+import { useConfig } from "../../../utils/contexts"
 import React from "react"
 
 interface ButtonProps {
@@ -15,7 +15,7 @@ interface ButtonProps {
 
 const Button = ({ currentHref, divider, Icon, href }: ButtonProps) => {
   const { t } = useTranslation("pages")
-  const [, setOpen] = useSidebarOpen()
+  const [, setOpen] = useConfig().sidebarOpen
 
   return (
     <TooltipWithOnClick title={currentHref ? t("alreadyOnThisPage") : ""}>

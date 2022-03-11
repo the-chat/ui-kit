@@ -10,11 +10,13 @@ const getDisplayInfo: (
 ) => {
   const Markdown = getMarkdown(ReactMarkdown, remarkGfm)
 
-  return ({ tKey, ...props }) => {
+  const DisplayInfo = ({ tKey, ...props }) => {
     const { t } = useTranslation("info")
 
     return <Markdown {...props}>{t(tKey)}</Markdown>
   }
+
+  return DisplayInfo
 }
 
 export default getDisplayInfo

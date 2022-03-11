@@ -1,6 +1,6 @@
 import { sort } from "@the-chat/utils"
 import { Info, Help, SvgIconComponent } from "@mui/icons-material"
-import { useInfoConfig } from "./contexts"
+import { useConfig } from "./contexts"
 
 export interface SidebarButtonConfig {
   divider?: boolean
@@ -10,7 +10,7 @@ export interface SidebarButtonConfig {
 }
 
 export const useSidebarDefaultButtons = (indexOffset: number) => {
-  const { HOST, aboutUrl, legalUrl } = useInfoConfig()
+  const { HOST, aboutUrl, legalUrl } = useConfig().InfoConfig
 
   return [
     { index: indexOffset, Icon: Help, href: HOST + aboutUrl },
