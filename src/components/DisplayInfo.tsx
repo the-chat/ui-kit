@@ -4,7 +4,7 @@ import getMarkdown, { Args, Options } from "./Markdown"
 
 const getDisplayInfo: (
   ...args: Args
-) => (props: Options & { tKey: Namespace }) => JSX.Element = (
+) => (props: Partial<Options> & { tKey: Namespace }) => JSX.Element = (
   ReactMarkdown,
   remarkGfm
 ) => {

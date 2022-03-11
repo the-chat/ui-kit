@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, PropsWithChildren } from "react"
 import Typography, { TypographyProps } from "@mui/material/Typography"
 import Link from "./Link"
 import Title from "./Title"
@@ -20,7 +20,7 @@ export type Options = {
 }
 
 const getMarkdown = (
-  ReactMarkdown: (props: Options) => JSX.Element,
+  ReactMarkdown: (props: PropsWithChildren<Options>) => JSX.Element,
   remarkGfm: unknown
 ) => {
   const MarkdownHeading: H = ({ level, children }) => {
@@ -89,7 +89,7 @@ const getMarkdown = (
     table: MarkdownTable,
   }
 
-  return (props: Options) => (
+  return (props: Partial<Options>) => (
     <ReactMarkdown
       {...props}
       components={Object.assign(components, props.components)}
