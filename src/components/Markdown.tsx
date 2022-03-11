@@ -11,18 +11,18 @@ type H = FC<{ level: number }>
 
 type Components = Record<"li" | "table", FC> &
   Record<"p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6", H> &
-  Record<"ul", (props: unknown) => JSX.Element> &
+  Record<"ul", (props: Record<string, unknown>) => JSX.Element> &
   Record<"a", typeof Link>
 
 export type Options = {
   remarkPlugins: unknown[]
   components: Components
-  children: string
+  children: unknown
 }
 
 const getMarkdown = (
   // todo?: types
-  ReactMarkdown: (props: unknown) => JSX.Element,
+  ReactMarkdown: (props: Options) => JSX.Element,
   remarkGfm: unknown
 ) => {
   const MarkdownHeading: H = ({ level, children }) => {
