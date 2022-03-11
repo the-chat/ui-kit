@@ -5,6 +5,7 @@ import { useSignOut } from "@the-chat/use-user"
 import { SSO, INFO } from "@the-chat/config"
 import { SidebarButtonConfig } from "./useSidebarButtons"
 import { Auth } from "@firebase/auth"
+import { ContainerProps } from "@mui/material"
 // todo: old-comment: use-user: type default value
 
 // todo???????: to types pkg???
@@ -17,7 +18,8 @@ type ReWrite<O, P extends keyof O, NP extends string | number | symbol> = Omit<
 export type Value = {
   sidebarOpen: State<boolean>
   signOutArgs: Parameters<typeof useSignOut>
-  noUser: boolean
+  newUser: boolean
+  containerMaxWidth: ContainerProps["maxWidth"]
   auth: Auth
   InfoConfig: ReWrite<typeof INFO, "DEFAULT_INFO_HOST", "HOST">
   SSOConfig: ReWrite<typeof SSO, "DEFAULT_SSO_HOST", "HOST">
@@ -26,21 +28,15 @@ export type Value = {
 
 export const [useConfig, ConfigProvider] = genContext<Value>()
 
-export const useSidebarOpen = () => useConfig().sidebarOpen
 export const useSidebarButtons = () => useConfig().useSidebarButtons()
 
-export const useSignOutArgs = () => useConfig().signOutArgs
-
 export const useSSO = () => {
-  const { auth, SSOConfig, noUser } = useConfig()
+  const { auth, SSOConfig, newUser } = useConfig()
 
-  return usePkgSSO(auth, SSOConfig.HOST, noUser)
+  return usePkgSSO(auth, SSOConfig.HOST, newUser)
 }
 export const useGetSSOLink = () => {
   const { HOST } = useConfig().SSOConfig
 
   return getSSOLink(HOST)
 }
-export const useSSOConfig = () => useConfig().SSOConfig
-
-export const useInfoConfig = () => useConfig().InfoConfig
