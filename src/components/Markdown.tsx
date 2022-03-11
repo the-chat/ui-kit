@@ -17,10 +17,11 @@ type Components = Record<"li" | "table", FC> &
 export type Options = {
   remarkPlugins: unknown[]
   components: Components
+  children: string
 }
 
 const getMarkdown = (
-  ReactMarkdown: (props: PropsWithChildren<Options>) => JSX.Element,
+  ReactMarkdown: (props: Options) => JSX.Element,
   remarkGfm: unknown
 ) => {
   const MarkdownHeading: H = ({ level, children }) => {
@@ -92,6 +93,7 @@ const getMarkdown = (
   const Markdown = (props: Partial<Options>) => (
     <ReactMarkdown
       {...props}
+      children={props.children || ""}
       components={Object.assign(components, props.components)}
       remarkPlugins={[
         remarkGfm,

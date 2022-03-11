@@ -2,7 +2,7 @@ import React from "react"
 import { Namespace, useTranslation } from "react-i18next"
 import getMarkdown, { Args, Options } from "./Markdown"
 
-type DisplayInfoProps = Partial<Options> & { tKey: Namespace }
+type DisplayInfoProps = Partial<Omit<Options, "children">> & { tKey: Namespace }
 
 const getDisplayInfo: (
   ...args: Args
