@@ -89,7 +89,7 @@ const getMarkdown = (
     table: MarkdownTable,
   }
 
-  return (props: Partial<Options>) => (
+  const Markdown = (props: Partial<Options>) => (
     <ReactMarkdown
       {...props}
       components={Object.assign(components, props.components)}
@@ -99,6 +99,8 @@ const getMarkdown = (
       ]}
     />
   )
+
+  return Markdown
 }
 
 export type Args = Parameters<typeof getMarkdown>
