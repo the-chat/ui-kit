@@ -1,11 +1,11 @@
 import NextLink, { LinkProps as NextLinkProps } from "next/link"
-import { Link as MUILink, LinkProps as MuiLinkProps } from "@mui/material"
+import { Link as MUILink, LinkProps as MUILinkProps } from "@mui/material"
 import React, { ForwardedRef, forwardRef } from "react"
 
 export type LinkProps = {
   href: NextLinkProps["href"]
   next?: Omit<NextLinkProps, "href">
-} & MuiLinkProps
+} & MUILinkProps
 
 // todo?: naming
 const LinkForwardRefRender = (
