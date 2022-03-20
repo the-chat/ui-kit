@@ -9,18 +9,6 @@ type Wrapper1Props = {
   muiThemeConfig?: ThemeOptions
 }
 
-const Wrapper1: FC<Wrapper1Props> = ({
-  children,
-  configProviderValue,
-  muiThemeConfig,
-}) => (
-  <ConfigProvider value={configProviderValue}>
-    <ThemeProvider theme={createTheme(muiThemeConfig)}>
-      {children}
-    </ThemeProvider>
-  </ConfigProvider>
-)
-
 export type ProvidersProps = Wrapper1Props & {
   userProviderParams: Omit<Props, "auth">
 }
@@ -33,9 +21,11 @@ const Providers: FC<ProvidersProps> = ({
 }) => (
   <AlertProvider>
     <UserProvider auth={configProviderValue.auth} {...userProviderParams}>
-      <Wrapper1 {...{ configProviderValue, muiThemeConfig }}>
-        {children}
-      </Wrapper1>
+      <ConfigProvider value={configProviderValue}>
+        <ThemeProvider theme={createTheme(muiThemeConfig)}>
+          {children}
+        </ThemeProvider>
+      </ConfigProvider>
     </UserProvider>
   </AlertProvider>
 )
