@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from "react"
+import React, { FC } from "react"
 import Typography, { TypographyProps } from "@mui/material/Typography"
 import Link from "./Link"
 import Title from "./Title"
@@ -94,13 +94,14 @@ const getMarkdown = (
   const Markdown = (props: Partial<Options>) => (
     <ReactMarkdown
       {...props}
-      children={props.children || ""}
       components={Object.assign(components, props.components)}
       remarkPlugins={[
         remarkGfm,
         ...(props.remarkPlugins ? props.remarkPlugins : []),
       ]}
-    />
+    >
+      {props.children || ""}
+    </ReactMarkdown>
   )
 
   return Markdown
