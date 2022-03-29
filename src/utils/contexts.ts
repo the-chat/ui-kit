@@ -6,6 +6,7 @@ import { SidebarButtonConfig } from "./useSidebarButtons"
 import { Auth } from "@firebase/auth"
 import { ContainerProps } from "@mui/material"
 import ReactMarkdown from "react-markdown"
+import { ComponentProps } from "react"
 
 export type Value = {
   sidebarOpen: State<boolean>
@@ -14,7 +15,10 @@ export type Value = {
   containerMaxWidth: ContainerProps["maxWidth"]
   auth: Auth
   useSidebarButtons: () => SidebarButtonConfig[]
-  ReactMarkdown: typeof ReactMarkdown
+  markdown: {
+    Component?: typeof ReactMarkdown
+    props: ComponentProps<typeof ReactMarkdown>
+  }
 }
 
 export const [useConfig, ConfigProvider] = genContext<Value>()

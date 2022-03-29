@@ -79,18 +79,22 @@ const components: Components = {
   table: MarkdownTable,
 }
 
-const Markdown = (props: ComponentProps<typeof ReactMarkdown>) => {
-  const { ReactMarkdown } = useConfig()
+const Markdown = ({
+  children,
+}: Pick<ComponentProps<typeof ReactMarkdown>, "children">) => {
+  const { Component, props } = useConfig().markdown
 
-  return (
-    <ReactMarkdown
-      {...props}
-      components={Object.assign(components, props.components)}
-      remarkPlugins={props.remarkPlugins}
-    >
-      {props.children || ""}
-    </ReactMarkdown>
-  )
+  if (Component)
+    return (
+      <Component
+        {...props}
+        components={Object.assign(components, props.components)}
+      >
+        {children}
+      </Component>
+    )
+
+  return null
 }
 
 export default Markdown
