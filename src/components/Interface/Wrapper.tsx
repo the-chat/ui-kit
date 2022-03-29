@@ -4,9 +4,11 @@ import { useSSO } from "../../utils/contexts"
 import Providers, { ProvidersProps } from "./Providers"
 import ProgressBar from "./ProgressBar"
 import AppHead, { AppHeadProps } from "./AppHead"
+import useCurrectLocale from "../../utils/useCurrectLocale"
 
 const Logic = () => {
   useSSO()
+  useCurrectLocale()
 
   return null
 }
