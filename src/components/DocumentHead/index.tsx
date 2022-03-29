@@ -28,4 +28,5 @@ export const defaultProps: (
   twitter: { card: "summary", ...config.twitter },
 })
 
+export { Props as DocumentHeadProps }
 export default DocumentHead
