@@ -1,8 +1,8 @@
 import React, { FC } from "react"
 import { Container } from "@mui/material"
-import { useConfig } from "../utils/contexts"
-import Header from "../components/Header"
-import Wrapper, { WrapperProps } from "../components/Wrapper"
+import { useConfig } from "../../utils/contexts"
+import Header from "../Header"
+import Wrapper, { WrapperProps } from "./Wrapper"
 
 const PageLayout: FC = ({ children }) => (
   <>

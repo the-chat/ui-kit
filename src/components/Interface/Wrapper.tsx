@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { CssBaseline, StyledEngineProvider } from "@mui/material"
-import { useSSO } from "../utils/contexts"
+import { useSSO } from "../../utils/contexts"
 import Providers, { ProvidersProps } from "./Providers"
 import ProgressBar from "./ProgressBar"
 import AppHead, { AppHeadProps } from "./AppHead"
