@@ -7,6 +7,11 @@ import { Props } from "./types"
 
 const DocumentHead = (props: Props) => (
   <>
+    {/* learn */}
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+    />
     <MUILinks iconUrl={props.iconUrl} />
     <Pwa {...props} />
     <Twitter {...props} />
