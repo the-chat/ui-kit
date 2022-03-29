@@ -4,12 +4,9 @@ import { AlertProvider } from "@the-chat/alert"
 import { Props, UserProvider } from "@the-chat/use-user"
 import { ConfigProvider, Value } from "../utils/contexts"
 
-type Wrapper1Props = {
+export type ProvidersProps = {
   configProviderValue: Value
   muiThemeConfig?: ThemeOptions
-}
-
-export type ProvidersProps = Wrapper1Props & {
   userProviderParams: Omit<Props, "auth">
 }
 
