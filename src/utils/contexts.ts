@@ -33,10 +33,10 @@ export const useSidebarButtons = () => useConfig().useSidebarButtons()
 export const useSSO = () => {
   const { auth, SSOConfig, newUser } = useConfig()
 
-  return usePkgSSO(auth, SSOConfig.HOST, newUser)
+  usePkgSSO(auth, SSOConfig.HOST, newUser)
 }
-export const useGetSSOLink = () => {
+export const useGetSSOLink = (path = "") => {
   const { HOST } = useConfig().SSOConfig
 
-  return getSSOLink(HOST)
+  return getSSOLink(HOST + path)
 }
