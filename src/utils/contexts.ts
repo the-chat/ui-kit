@@ -17,7 +17,7 @@ export type Value = {
   useSidebarButtons: () => SidebarButtonConfig[]
   markdown?: {
     Component: typeof ReactMarkdown
-    props: ComponentProps<typeof ReactMarkdown>
+    props: Omit<ComponentProps<typeof ReactMarkdown>, "children">
   }
 }
 
