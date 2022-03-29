@@ -80,7 +80,7 @@ const components: Components = {
 }
 
 const Markdown = (props: ComponentProps<typeof ReactMarkdown>) => {
-  const { ReactMarkdown } = useConfig().markdown
+  const { ReactMarkdown } = useConfig()
 
   return (
     <ReactMarkdown
