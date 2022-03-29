@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { Avatar, MenuItem } from "@mui/material"
 import { useUser } from "@the-chat/use-user"
-import Link, { LinkProps } from "../../../../Link"
+import Link, { LinkProps } from "../../../../../Link"
 
 const LinkCover: FC<Pick<LinkProps, "href">> = ({ href, children }) => {
   const [dbData] = useUser()

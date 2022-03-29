@@ -1,7 +1,7 @@
 import { ListItemIcon, MenuItem } from "@mui/material"
 import { Logout } from "@mui/icons-material"
 import { useSignOut } from "@the-chat/use-user"
-import { useConfig } from "../../../../../utils/contexts"
+import { useConfig } from "../../../../../../utils/contexts"
 import { useTranslation } from "next-i18next"
 import React from "react"
 

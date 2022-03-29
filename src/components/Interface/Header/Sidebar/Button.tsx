@@ -1,9 +1,9 @@
 import { ListItemText, ListItemIcon, ListItemButton } from "@mui/material"
-import Link from "../../Link"
-import TooltipWithOnClick from "../../TooltipWithOnClick"
+import Link from "../../../Link"
+import TooltipWithOnClick from "../../../TooltipWithOnClick"
 import { useTranslation } from "next-i18next"
 import { SvgIconComponent } from "@mui/icons-material"
-import { useConfig } from "../../../utils/contexts"
+import { useConfig } from "../../../../utils/contexts"
 import React from "react"
 
 interface ButtonProps {

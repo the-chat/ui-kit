@@ -1,7 +1,7 @@
 import React from "react"
 import { useTranslation } from "next-i18next"
 import LinkCover from "./LinkCover"
-import { useConfig, useGetSSOLink } from "../../../../../utils/contexts"
+import { useConfig, useGetSSOLink } from "../../../../../../utils/contexts"
 import { SSO } from "@the-chat/config"
 
 const ChangeLink = () => {

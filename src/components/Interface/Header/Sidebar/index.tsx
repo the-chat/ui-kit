@@ -1,6 +1,6 @@
 import Buttons from "./Buttons"
 import { Drawer } from "@mui/material"
-import { useConfig } from "../../../utils/contexts"
+import { useConfig } from "../../../../utils/contexts"
 import HeaderContent from "../HeaderContent"
 import React from "react"
 

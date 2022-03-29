@@ -4,7 +4,7 @@ import { List } from "@mui/material"
 import makeStyles from "@mui/styles/makeStyles"
 import { dependsOnToolbar } from "@the-chat/utils"
 import { useRouter } from "next/router"
-import { useSidebarButtons } from "../../../utils/contexts"
+import { useSidebarButtons } from "../../../../utils/contexts"
 
 const useStyles = makeStyles({
   buttonsClassName: {

@@ -1,6 +1,6 @@
 import React from "react"
 import { useTranslation } from "next-i18next"
-import { useConfig, useGetSSOLink } from "../../../../../utils/contexts"
+import { useConfig, useGetSSOLink } from "../../../../../../utils/contexts"
 import LinkCover from "./LinkCover"
 import { SSO } from "@the-chat/config"
 

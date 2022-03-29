@@ -1,7 +1,7 @@
 import React from "react"
 import { Avatar, IconButtonProps } from "@mui/material"
 import { useUser } from "@the-chat/use-user"
-import getFullname from "../../../../utils/getFullname"
+import getFullname from "../../../../../utils/getFullname"
 import ButtonWrapper from "../ButtonWrapper"
 import { useTranslation } from "next-i18next"
 
