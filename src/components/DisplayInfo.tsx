@@ -1,21 +1,14 @@
 import React from "react"
-import { Namespace, useTranslation } from "react-i18next"
-import getMarkdown, { Args, Options } from "./Markdown"
+import { TFuncKey, useTranslation } from "react-i18next"
+import Markdown from "./Markdown"
+import { Options } from "react-markdown"
 
-type DisplayInfoProps = Partial<Omit<Options, "children">> & { tKey: Namespace }
+type DisplayInfoProps = Partial<Omit<Options, "children">> & { tKey: TFuncKey }
+const DisplayInfo = ({ tKey, ...props }: DisplayInfoProps) => {
+  // todo?: namespace to params
+  const { t } = useTranslation("info")
 
-const getDisplayInfo: (
-  ...args: Args
-) => (props: DisplayInfoProps) => JSX.Element = (ReactMarkdown, remarkGfm) => {
-  const Markdown = getMarkdown(ReactMarkdown, remarkGfm)
-
-  const DisplayInfo = ({ tKey, ...props }: DisplayInfoProps) => {
-    const { t } = useTranslation("info")
-
-    return <Markdown {...props}>{t(tKey)}</Markdown>
-  }
-
-  return DisplayInfo
+  return <Markdown {...props}>{t(tKey)}</Markdown>
 }
 
-export default getDisplayInfo
+export default DisplayInfo
