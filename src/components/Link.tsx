@@ -13,7 +13,7 @@ const LinkForwardRefRender = (
   ref: ForwardedRef<HTMLAnchorElement>
 ) => (
   <NextLink {...next} href={href} passHref>
-    <MUILink ref={ref} {...props} variant="body2" />
+    <MUILink ref={ref} {...props} />
   </NextLink>
 )
 
