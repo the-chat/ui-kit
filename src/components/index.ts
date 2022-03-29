@@ -9,9 +9,6 @@ export { default as DisplayInfo } from "./DisplayInfo"
 export { default as Interface } from "./Interface"
 export { WrapperProps } from "./Interface/Wrapper"
 
-// Header
-export { default as Header } from "./Header"
-
 // Link
 export * from "./Link"
 export { default as Link } from "./Link"
