@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { createTheme, ThemeOptions, ThemeProvider } from "@mui/material"
 import { AlertProvider } from "@the-chat/alert"
 import { Props, UserProvider } from "@the-chat/use-user"
-import { ConfigProvider, Value } from "../utils/contexts"
+import { ConfigProvider, Value } from "../../utils/contexts"
 
 export type ProvidersProps = {
   configProviderValue: Value
