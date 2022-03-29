@@ -15,8 +15,8 @@ export type Value = {
   containerMaxWidth: ContainerProps["maxWidth"]
   auth: Auth
   useSidebarButtons: () => SidebarButtonConfig[]
-  markdown: {
-    Component?: typeof ReactMarkdown
+  markdown?: {
+    Component: typeof ReactMarkdown
     props: ComponentProps<typeof ReactMarkdown>
   }
 }

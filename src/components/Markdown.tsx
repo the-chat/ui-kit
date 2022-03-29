@@ -82,13 +82,13 @@ const components: Components = {
 const Markdown = ({
   children,
 }: Pick<ComponentProps<typeof ReactMarkdown>, "children">) => {
-  const { Component, props } = useConfig().markdown
+  const { Component, props } = useConfig().markdown || {}
 
   if (Component)
     return (
       <Component
         {...props}
-        components={Object.assign(components, props.components)}
+        components={Object.assign(components, props?.components)}
       >
         {children}
       </Component>
