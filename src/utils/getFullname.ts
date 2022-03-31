@@ -1,5 +1,5 @@
 import { TFunction } from "next-i18next"
-import { BaseUserData } from "@the-chat/types"
+import { BaseUserData } from "@the-chat/use-user"
 
 const getFullname = (
   { displayName, email, phoneNumber }: BaseUserData,
