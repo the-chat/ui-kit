@@ -1,6 +1,5 @@
 import { sort } from "@the-chat/utils"
 import { Info, Help, SvgIconComponent } from "@mui/icons-material"
-import { useConfig } from "./contexts"
 import { INFO } from "@the-chat/config"
 
 export interface SidebarButtonConfig {
