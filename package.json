@@ -1,6 +1,6 @@
 {
   "name": "@the-chat/ui-kit",
-  "version": "1.3.9",
+  "version": "1.4.0",
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "git://github.com/the-chat/ui-kit",
