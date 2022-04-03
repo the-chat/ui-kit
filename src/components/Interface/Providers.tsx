@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { createTheme, ThemeOptions, ThemeProvider } from "@mui/material"
 import { AlertProvider } from "@the-chat/alert"
 import { Props, UserProvider } from "@the-chat/use-user"

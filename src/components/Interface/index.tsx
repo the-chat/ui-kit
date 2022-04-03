@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Container } from "@mui/material"
 import { useConfig } from "../../utils/contexts"
 import Header from "./Header"

@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Menu } from "@mui/material"
 
 const MenuWrapper: FC<{

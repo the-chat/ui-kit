@@ -1,6 +1,6 @@
 // TODO?: components props
 
-import React, { ComponentProps } from "react"
+import { ComponentProps } from "react"
 // import Link from "./Link"
 import Title, { SubTitle } from "./Title"
 import {

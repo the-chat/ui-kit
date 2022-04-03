@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import { ReactNode } from "react"
 import { Typography, TypographyProps } from "@mui/material"
 
 interface TitleProps extends TypographyProps {

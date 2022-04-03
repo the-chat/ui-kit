@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Avatar, MenuItem } from "@mui/material"
 import { useUser } from "@the-chat/use-user"
 import Link, { LinkProps } from "../../../../../Link"

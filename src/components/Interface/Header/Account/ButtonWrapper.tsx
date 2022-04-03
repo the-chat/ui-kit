@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { IconButton, IconButtonProps, Theme } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import TooltipWithOnClick from "../../../TooltipWithOnClick"
