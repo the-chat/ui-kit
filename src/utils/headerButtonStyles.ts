@@ -5,7 +5,7 @@ const headerButtonStyles = (theme: Theme, right?: true) => ({
   position: "absolute" as const,
   ...dependsOnToolbar((toolbarHeight) => {
     // learn: what is "margin" here
-    // todo?: same as in index
+    // old-comment: todo?: same as in index
     const margin = parseInt(theme.spacing(1))
     const radius = toolbarHeight / 2 - margin
 
