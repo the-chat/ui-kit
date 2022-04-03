@@ -2,7 +2,7 @@
 
 import { ComponentProps } from "react"
 // import Link from "./Link"
-import Title, { SubTitle } from "./Title"
+import Title, { SubTitle } from "../Title"
 import {
   Typography,
   TypographyProps,
@@ -13,7 +13,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material"
-import { useConfig } from "../utils/contexts"
+import { useConfig } from "../../utils/contexts"
 import ReactMarkdown, { Components } from "react-markdown"
 
 const MarkdownHeading: Components["h1"] = ({ level, children }) => {
