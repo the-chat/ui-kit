@@ -4,7 +4,6 @@ import TooltipWithOnClick from "../../../TooltipWithOnClick"
 import { useTranslation } from "next-i18next"
 import { SvgIconComponent } from "@mui/icons-material"
 import { useConfig } from "../../../../utils/contexts"
-import React from "react"
 
 interface ButtonProps {
   currentHref: boolean

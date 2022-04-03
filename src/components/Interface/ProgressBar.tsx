@@ -1,4 +1,3 @@
-import React from "react"
 import NextNprogress from "nextjs-progressbar"
 import { useTheme } from "@mui/material"
 

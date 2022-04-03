@@ -1,5 +1,4 @@
 import { IconButtonProps } from "@mui/material"
-import React from "react"
 import MenuItems from "./MenuItems"
 import MenuWrapper from "./MenuWrapper"
 import Open from "./Open"

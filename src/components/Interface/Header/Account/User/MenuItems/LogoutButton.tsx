@@ -3,7 +3,6 @@ import { Logout } from "@mui/icons-material"
 import { useSignOut } from "@the-chat/use-user"
 import { useConfig } from "../../../../../../utils/contexts"
 import { useTranslation } from "next-i18next"
-import React from "react"
 
 const LogoutButton = () => {
   const { t } = useTranslation("ui-kit-header")

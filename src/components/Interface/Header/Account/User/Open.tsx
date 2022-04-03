@@ -1,4 +1,3 @@
-import React from "react"
 import { Avatar, IconButtonProps } from "@mui/material"
 import { useUser } from "@the-chat/use-user"
 import getFullname from "../../../../../utils/getFullname"

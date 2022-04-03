@@ -1,4 +1,3 @@
-import React from "react"
 import { MUILinksProps } from "./types"
 
 const MUILinks = ({ iconUrl }: MUILinksProps) => (

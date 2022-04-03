@@ -1,4 +1,3 @@
-import React from "react"
 import { TwitterProps } from "./types"
 
 const Twitter = ({

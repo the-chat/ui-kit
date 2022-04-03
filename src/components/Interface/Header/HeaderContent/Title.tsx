@@ -5,7 +5,6 @@ import { useUser } from "@the-chat/use-user"
 import getFullname from "../../../../utils/getFullname"
 import { useTranslation } from "next-i18next"
 import TooltipWithOnClick from "../../../TooltipWithOnClick"
-import React from "react"
 
 const useStyles = makeStyles<Theme>((theme) => ({
   ol: {

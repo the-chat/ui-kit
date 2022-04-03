@@ -1,7 +1,6 @@
 // import { ProviderProps } from "@the-chat/gen-context" // todo?: this export is useless???
 import { useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
-import React from "react"
 
 export type AppHeadProps = {
   name: string

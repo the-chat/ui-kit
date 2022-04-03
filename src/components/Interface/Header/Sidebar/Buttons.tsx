@@ -1,4 +1,3 @@
-import React from "react"
 import Button from "./Button"
 import { List } from "@mui/material"
 import makeStyles from "@mui/styles/makeStyles"

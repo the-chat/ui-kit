@@ -1,4 +1,3 @@
-import React from "react"
 import { NoSsr } from "@mui/material"
 import { useUser } from "@the-chat/use-user"
 import NewAccount from "./NewAccount"

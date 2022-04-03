@@ -1,7 +1,6 @@
 import { AppBar } from "@mui/material"
 import HeaderContent from "./HeaderContent"
 import Sidebar from "./Sidebar"
-import React from "react"
 import Account from "./Account"
 
 // TOOD: NAMING IN ALL DiR

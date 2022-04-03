@@ -2,7 +2,6 @@ import { makeStyles } from "@mui/styles"
 import { IconButton, Theme } from "@mui/material"
 import { useConfig } from "../../../../utils/contexts"
 import { Close, Menu } from "@mui/icons-material"
-import React from "react"
 import headerButtonStyles from "../../../../utils/headerButtonStyles"
 
 const useStyles = makeStyles<Theme>((theme) => ({

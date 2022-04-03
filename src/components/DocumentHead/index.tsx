@@ -1,4 +1,3 @@
-import React from "react"
 import MUILinks from "./MUILinks"
 import Pwa from "./Pwa"
 import Twitter from "./Twitter"

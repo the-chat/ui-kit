@@ -1,4 +1,3 @@
-import React from "react"
 import { useTranslation } from "next-i18next"
 import LinkCover from "./LinkCover"
 import { SSO } from "@the-chat/config"
