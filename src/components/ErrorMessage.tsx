@@ -10,6 +10,7 @@ const ErrorMessage = ({
   log: Log
   error: Error
 }) => {
+  // todo????: ns to config
   const { t } = useTranslation("fallbacks")
 
   log(error)
