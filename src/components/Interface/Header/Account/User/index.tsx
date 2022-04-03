@@ -1,10 +1,11 @@
 import { IconButtonProps } from "@mui/material"
+import { useState } from "react"
 import MenuItems from "./MenuItems"
 import MenuWrapper from "./MenuWrapper"
 import Open from "./Open"
 
 const User = () => {
-  const [anchorEl, setAnchorEl] = React.useState<Element | null>(null)
+  const [anchorEl, setAnchorEl] = useState<Element | null>(null)
 
   const handleClick = (
     event: Parameters<Required<IconButtonProps>["onClick"]>[0]
