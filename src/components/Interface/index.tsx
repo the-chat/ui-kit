@@ -1,24 +1,31 @@
-import { FC } from "react"
-import { Container } from "@mui/material"
+import { FC, forwardRef, PropsWithChildren, ReactChild, ReactNode } from "react"
+import { Container, ContainerProps } from "@mui/material"
 import { useConfig } from "../../utils/contexts"
 import Header from "./Header"
 import Wrapper, { WrapperProps } from "./Wrapper"
-import { makeStyles } from "@mui/styles"
-import { dependsOnToolbar } from "@the-chat/utils"
 
-const PageLayout: FC = ({ children }) => {
-  return (
-    <>
-      <Header />
-      <Container maxWidth={useConfig().containerMaxWidth}>{children}</Container>
-    </>
+const PageLayout = forwardRef(
+  ({ children }: { children: ReactNode }, ref: ContainerProps["ref"]) => {
+    return (
+      <>
+        <Header />
+        <Container ref={ref} maxWidth={useConfig().containerMaxWidth}>
+          {children}
+        </Container>
+      </>
+    )
+  }
+)
+
+const Interface = forwardRef(
+  (
+    { children, ...props }: PropsWithChildren<WrapperProps>,
+    ref: ContainerProps["ref"]
+  ) => (
+    <Wrapper {...props}>
+      <PageLayout ref={ref}>{children}</PageLayout>
+    </Wrapper>
   )
-}
-
-const Interface: FC<WrapperProps> = ({ children, ...props }) => (
-  <Wrapper {...props}>
-    <PageLayout>{children}</PageLayout>
-  </Wrapper>
 )
 
 export default Interface

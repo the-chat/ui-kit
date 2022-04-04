@@ -9,7 +9,7 @@ export type LinkProps = {
 
 const LinkForwardRefRender = (
   { href, next, ...props }: LinkProps,
-  ref: ForwardedRef<HTMLAnchorElement>
+  ref: MUILinkProps["ref"]
 ) => (
   <NextLink {...next} href={href} passHref>
     <MUILink ref={ref} {...props} />

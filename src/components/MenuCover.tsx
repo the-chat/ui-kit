@@ -1,27 +1,31 @@
-import { Menu } from "@mui/material"
+import { Menu, MenuProps } from "@mui/material"
 import { NoChildrenComponent } from "@the-chat/types"
-import { FC, MouseEvent, useState } from "react"
+import { PropsWithChildren, forwardRef, MouseEvent, useState } from "react"
 
-const MenuCover: FC<{
+type MenuCoverProps = PropsWithChildren<{
   Open: NoChildrenComponent<{
     onClick: (event: MouseEvent) => void
   }>
-}> = ({ Open, children }) => {
-  const [anchorEl, setAnchorEl] = useState<Element | null>(null)
-  const open = !!anchorEl
+}>
 
-  const onClick = (event: MouseEvent) => setAnchorEl(event.currentTarget)
+const MenuCover = forwardRef(
+  ({ Open, children }: MenuCoverProps, ref: MenuProps["ref"]) => {
+    const [anchorEl, setAnchorEl] = useState<Element | null>(null)
+    const open = !!anchorEl
 
-  const handleClose = () => setAnchorEl(null)
+    const onClick = (event: MouseEvent) => setAnchorEl(event.currentTarget)
 
-  return (
-    <>
-      <Open onClick={onClick} />
-      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        {children}
-      </Menu>
-    </>
-  )
-}
+    const handleClose = () => setAnchorEl(null)
+
+    return (
+      <>
+        <Open onClick={onClick} />
+        <Menu ref={ref} anchorEl={anchorEl} open={open} onClose={handleClose}>
+          {children}
+        </Menu>
+      </>
+    )
+  }
+)
 
 export default MenuCover

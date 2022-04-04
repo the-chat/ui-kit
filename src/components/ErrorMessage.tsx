@@ -1,27 +1,33 @@
-import { Typography } from "@mui/material"
+import { Typography, TypographyProps } from "@mui/material"
 import { useTranslation } from "next-i18next"
+import { forwardRef } from "react"
 
 export type Log = (msg: unknown) => void
 
-const ErrorMessage = ({
-  log = console.dir,
-  error,
-}: {
-  log: Log
-  error: Error
-}) => {
-  // todo????: ns to config
-  const { t } = useTranslation("fallbacks")
+const ErrorMessage = forwardRef(
+  (
+    {
+      log = console.dir,
+      error,
+    }: {
+      log: Log
+      error: Error
+    },
+    ref: TypographyProps["ref"]
+  ) => {
+    // todo????: ns to config
+    const { t } = useTranslation("fallbacks")
 
-  log(error)
+    log(error)
 
-  return (
-    <Typography variant="body1">
-      {t("error", {
-        errorMessage: error,
-      })}
-    </Typography>
-  )
-}
+    return (
+      <Typography ref={ref} variant="body1">
+        {t("error", {
+          errorMessage: error,
+        })}
+      </Typography>
+    )
+  }
+)
 
 export default ErrorMessage

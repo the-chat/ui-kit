@@ -2,6 +2,7 @@ import { makeStyles } from "@mui/styles"
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate"
 import { TextField, TextFieldProps } from "@mui/material"
 import { NoChildrenComponent } from "@the-chat/types"
+import { forwardRef } from "react"
 
 const useStyles = makeStyles({
   hiddenFileInput: {
@@ -23,33 +24,39 @@ type DT = {
   children: Element
 }
 
-const InputFile = <T extends DT>({
-  Tag,
-  children = <AddPhotoAlternateIcon />,
-  disabled = false,
-  componentProps,
-  ...props
-}: {
-  Tag: NoChildrenComponent<T>
-  componentProps: Omit<T, keyof DT>
-} & TextFieldProps) => {
-  const { hiddenFileInput } = useStyles()
+const InputFile = forwardRef(
+  <T extends DT>(
+    {
+      Tag,
+      children = <AddPhotoAlternateIcon />,
+      disabled = false,
+      componentProps,
+      ...props
+    }: {
+      Tag: NoChildrenComponent<T>
+      componentProps: Omit<T, keyof DT>
+    } & TextFieldProps,
+    ref: TextFieldProps["ref"]
+  ) => {
+    const { hiddenFileInput } = useStyles()
 
-  return (
-    <Tag {...(componentProps as T)} component="label" disabled={disabled}>
-      {/* learn: in html "<input type="file" ... value>" should i fix than and is this is a bug? */}
-      <>
-        <TextField
-          // props not overriding component behavior
-          {...props}
-          disabled={disabled}
-          className={[props.className, hiddenFileInput].join(" ")}
-          type="file"
-        />
-        {children}
-      </>
-    </Tag>
-  )
-}
+    return (
+      <Tag {...(componentProps as T)} component="label" disabled={disabled}>
+        {/* learn: in html "<input type="file" ... value>" should i fix than and is this is a bug? */}
+        <>
+          <TextField
+            ref={ref}
+            // props not overriding component behavior
+            {...props}
+            disabled={disabled}
+            className={[props.className, hiddenFileInput].join(" ")}
+            type="file"
+          />
+          {children}
+        </>
+      </Tag>
+    )
+  }
+)
 
 export default InputFile

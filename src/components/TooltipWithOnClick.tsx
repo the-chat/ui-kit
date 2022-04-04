@@ -4,8 +4,14 @@ import {
   ReactNode,
   ComponentProps,
   ElementType,
+  forwardRef,
 } from "react"
-import { ClickAwayListener, Tooltip, TooltipProps } from "@mui/material"
+import {
+  ClickAwayListener,
+  FabProps,
+  Tooltip,
+  TooltipProps,
+} from "@mui/material"
 
 // todo: too many eventHandlers calls
 
@@ -19,54 +25,60 @@ type TooltipWithOnClickProps<T extends ElementType> = {
 }
 
 // todo: remake
-const TooltipWithOnClick = <T extends ElementType>({
-  title,
-  ComponentTag = "span",
-  componentProps,
-  tooltipProps,
-  children,
-}: TooltipWithOnClickProps<T>) => {
-  const [open, setOpen] = useState(false)
+const TooltipWithOnClick = forwardRef(
+  <T extends ElementType>(
+    {
+      title,
+      ComponentTag = "span",
+      componentProps,
+      tooltipProps,
+      children,
+    }: TooltipWithOnClickProps<T>,
+    ref: FabProps["ref"]
+  ) => {
+    const [open, setOpen] = useState(false)
 
-  const handleTooltipClose = () => setOpen(false)
-  const handleTooltipOpen = () => setOpen(true)
+    const handleTooltipClose = () => setOpen(false)
+    const handleTooltipOpen = () => setOpen(true)
 
-  return (
-    <ClickAwayListener onClickAway={handleTooltipClose}>
-      <Tooltip
-        // learn
-        PopperProps={{
-          disablePortal: true,
-        }}
-        // style={{ background: "#f00" }}
-        onOpen={handleTooltipOpen}
-        onClose={handleTooltipClose}
-        open={open}
-        // disableFocusListener
-        // disableHoverListener
-        // disableTouchListener
-        title={title}
-        onClick={(ev) => console.log(ev.target)}
-        {...tooltipProps}
-      >
-        <ComponentTag
-          {...componentProps}
-          onClick={(
-            ev: typeof componentProps extends undefined
-              ? undefined
-              : MouseEvent<T, MouseEvent>
-          ) => {
-            componentProps &&
-              componentProps.onClick &&
-              componentProps.onClick(ev)
-            handleTooltipOpen()
+    return (
+      <ClickAwayListener onClickAway={handleTooltipClose}>
+        <Tooltip
+          ref={ref}
+          // learn
+          PopperProps={{
+            disablePortal: true,
           }}
+          // style={{ background: "#f00" }}
+          onOpen={handleTooltipOpen}
+          onClose={handleTooltipClose}
+          open={open}
+          // disableFocusListener
+          // disableHoverListener
+          // disableTouchListener
+          title={title}
+          onClick={(ev) => console.log(ev.target)}
+          {...tooltipProps}
         >
-          {children}
-        </ComponentTag>
-      </Tooltip>
-    </ClickAwayListener>
-  )
-}
+          <ComponentTag
+            {...componentProps}
+            onClick={(
+              ev: typeof componentProps extends undefined
+                ? undefined
+                : MouseEvent<T, MouseEvent>
+            ) => {
+              componentProps &&
+                componentProps.onClick &&
+                componentProps.onClick(ev)
+              handleTooltipOpen()
+            }}
+          >
+            {children}
+          </ComponentTag>
+        </Tooltip>
+      </ClickAwayListener>
+    )
+  }
+)
 
 export default TooltipWithOnClick
