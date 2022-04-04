@@ -20,7 +20,7 @@ const SignedInOnly: FC<Options> = ({
   withoutPush,
   withoutFallbacks,
   withDb,
-  log = console.dir,
+  log = console.dir, // todo: not working as default value
 }) => {
   const { t } = useTranslation("signed-in-only")
   const [dbData, user, { loading, error }, { dbLoading, dbError }] = useUser()
