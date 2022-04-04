@@ -13,19 +13,16 @@ const Logic = () => {
   return null
 }
 
-export type WrapperProps = { Head: FC } & ProvidersProps & AppHeadProps
+export type WrapperProps = ProvidersProps & { appHead: AppHeadProps }
 
 const Wrapper: FC<WrapperProps> = ({
   children,
-  Head,
-  name,
+  appHead,
   ...providersProps
 }) => (
   <StyledEngineProvider injectFirst>
     <Providers {...providersProps}>
-      <Head>
-        <AppHead name={name} />
-      </Head>
+      <AppHead {...appHead} />
       <ProgressBar />
       <CssBaseline />
       <Logic />
