@@ -7,7 +7,7 @@ export { default as DocumentHead } from "./DocumentHead"
 
 // Interface
 export { default as Interface } from "./Interface"
-export { WrapperProps } from "./Interface/Wrapper"
+export type { WrapperProps } from "./Interface/Wrapper"
 
 // ErrorMessage
 export { default as ErrorMessage } from "./ErrorMessage"
