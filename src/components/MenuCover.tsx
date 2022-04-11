@@ -1,6 +1,12 @@
-import { Menu, MenuProps } from "@mui/material"
+import { Menu } from "@mui/material"
 import { NoChildrenComponent } from "@the-chat/types"
-import { PropsWithChildren, forwardRef, MouseEvent, useState } from "react"
+import {
+  PropsWithChildren,
+  forwardRef,
+  MouseEvent,
+  useState,
+  ComponentRef,
+} from "react"
 
 type MenuCoverProps = PropsWithChildren<{
   Open: NoChildrenComponent<{
@@ -8,8 +14,8 @@ type MenuCoverProps = PropsWithChildren<{
   }>
 }>
 
-const MenuCover = forwardRef(
-  ({ Open, children }: MenuCoverProps, ref: MenuProps["ref"]) => {
+const MenuCover = forwardRef<ComponentRef<typeof Menu>, MenuCoverProps>(
+  ({ Open, children }, ref) => {
     const [anchorEl, setAnchorEl] = useState<Element | null>(null)
     const open = !!anchorEl
 
@@ -27,5 +33,7 @@ const MenuCover = forwardRef(
     )
   }
 )
+
+MenuCover.displayName = "MenuCover"
 
 export default MenuCover

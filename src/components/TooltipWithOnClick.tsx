@@ -5,13 +5,9 @@ import {
   ComponentProps,
   ElementType,
   forwardRef,
+  Ref,
 } from "react"
-import {
-  ClickAwayListener,
-  FabProps,
-  Tooltip,
-  TooltipProps,
-} from "@mui/material"
+import { ClickAwayListener, Tooltip, TooltipProps } from "@mui/material"
 
 // todo: too many eventHandlers calls
 
@@ -34,7 +30,7 @@ const TooltipWithOnClick = forwardRef(
       tooltipProps,
       children,
     }: TooltipWithOnClickProps<T>,
-    ref: FabProps["ref"]
+    ref: Ref<unknown>
   ) => {
     const [open, setOpen] = useState(false)
 
@@ -80,5 +76,7 @@ const TooltipWithOnClick = forwardRef(
     )
   }
 )
+
+TooltipWithOnClick.displayName = "TooltipWithOnClick"
 
 export default TooltipWithOnClick

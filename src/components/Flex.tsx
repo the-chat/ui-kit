@@ -1,12 +1,9 @@
 import { Box, BoxProps } from "@mui/material"
-import { forwardRef } from "react"
+import { ComponentRef, forwardRef } from "react"
 import flex, { FlexProps } from "../utils/flex"
 
-const Flex = forwardRef(
-  (
-    { col, aic, sx = {}, ...props }: BoxProps & FlexProps,
-    ref: BoxProps["ref"]
-  ) => (
+const Flex = forwardRef<ComponentRef<typeof Box>, BoxProps & FlexProps>(
+  ({ col, aic, sx = {}, ...props }, ref) => (
     <Box
       ref={ref}
       sx={{
@@ -17,5 +14,7 @@ const Flex = forwardRef(
     />
   )
 )
+
+Flex.displayName = "Flex"
 
 export default Flex

@@ -1,10 +1,12 @@
-import { CircularProgress, Typography, TypographyProps } from "@mui/material"
+import { CircularProgress, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { useTranslation } from "next-i18next"
-import { forwardRef } from "react"
+import { ComponentRef, forwardRef } from "react"
 
-const Loading = forwardRef(
-  ({ text }: { text?: string }, ref: TypographyProps["ref"]) => {
+type LoadingProps = { text?: string }
+
+const Loading = forwardRef<ComponentRef<typeof Typography>, LoadingProps>(
+  ({ text }, ref) => {
     const { t } = useTranslation("fallbacks")
 
     return (
@@ -17,5 +19,7 @@ const Loading = forwardRef(
     )
   }
 )
+
+Loading.displayName = "Loading"
 
 export default Loading
