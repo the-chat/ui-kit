@@ -1,6 +1,6 @@
 {
   "name": "@the-chat/ui-kit",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "git://github.com/the-chat/ui-kit",
@@ -18,8 +18,8 @@
     "@mui/styles": "^5.4.1",
     "@the-chat/config": "^1.0.6",
     "@the-chat/gen-context": "^1.1.8",
-    "@the-chat/use-sso": "^1.1.8",
-    "@the-chat/use-user": "^2.0.3",
+    "@the-chat/use-sso": "^1.1.9",
+    "@the-chat/use-user": "^2.0.4",
     "@the-chat/utils": "^1.1.7",
     "next": "^12.0.10",
     "next-i18next": "^10.5.0",
