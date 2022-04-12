@@ -7,11 +7,11 @@ import { ConfigProvider, Value } from "../../utils/contexts"
 export type ProvidersProps = {
   configProviderValue: Value
   muiThemeConfig?: ThemeOptions
-  userProviderParams: Omit<Props, "auth">
+  userProviderProps: Omit<Props, "auth">
 }
 
 const Providers: FC<ProvidersProps> = ({
-  userProviderParams,
+  userProviderProps,
   configProviderValue,
   muiThemeConfig,
   children,
@@ -19,7 +19,7 @@ const Providers: FC<ProvidersProps> = ({
   <ConfigProvider value={configProviderValue}>
     <ThemeProvider theme={createTheme(muiThemeConfig)}>
       <AlertProvider>
-        <UserProvider auth={configProviderValue.auth} {...userProviderParams}>
+        <UserProvider auth={configProviderValue.auth} {...userProviderProps}>
           {children}
         </UserProvider>
       </AlertProvider>
