@@ -16,15 +16,15 @@ const Providers: FC<ProvidersProps> = ({
   muiThemeConfig,
   children,
 }) => (
-  <AlertProvider>
-    <UserProvider auth={configProviderValue.auth} {...userProviderParams}>
-      <ConfigProvider value={configProviderValue}>
-        <ThemeProvider theme={createTheme(muiThemeConfig)}>
+  <ConfigProvider value={configProviderValue}>
+    <ThemeProvider theme={createTheme(muiThemeConfig)}>
+      <AlertProvider>
+        <UserProvider auth={configProviderValue.auth} {...userProviderParams}>
           {children}
-        </ThemeProvider>
-      </ConfigProvider>
-    </UserProvider>
-  </AlertProvider>
+        </UserProvider>
+      </AlertProvider>
+    </ThemeProvider>
+  </ConfigProvider>
 )
 
 export default Providers
